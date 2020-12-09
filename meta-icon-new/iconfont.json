@@ -1,0 +1,79 @@
+{
+  "id": "1704483",
+  "name": "metabase",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4766694",
+      "name": "unlock",
+      "font_class": "unlock1",
+      "unicode": "e7c9",
+      "unicode_decimal": 59337
+    },
+    {
+      "icon_id": "13614065",
+      "name": "关联问答",
+      "font_class": "guanlianwenda",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "5880957",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "12215145",
+      "name": "lock",
+      "font_class": "lock",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "13616270",
+      "name": "user",
+      "font_class": "user-copy",
+      "unicode": "e760",
+      "unicode_decimal": 59232
+    },
+    {
+      "icon_id": "13616272",
+      "name": "lock",
+      "font_class": "lock-copy",
+      "unicode": "e761",
+      "unicode_decimal": 59233
+    },
+    {
+      "icon_id": "1331223",
+      "name": "user",
+      "font_class": "fonts-user",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7239929",
+      "name": "unlock",
+      "font_class": "unlock",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "13607802",
+      "name": "user",
+      "font_class": "fonts-user-copy",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "13607803",
+      "name": "unlock",
+      "font_class": "unlock-copy",
+      "unicode": "e75f",
+      "unicode_decimal": 59231
+    }
+  ]
+}

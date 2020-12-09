@@ -1,0 +1,96 @@
+import { t } from "ttag";
+
+import { PLUGIN_ADMIN_USER_FORM_FIELDS } from "metabase/plugins";
+import validate from "metabase/lib/validate";
+import FormGroupsWidget from "metabase/components/form/widgets/FormGroupsWidget";
+
+import type { FormFieldDefinition } from "metabase/containers/FormSetup";
+// import  FormFieldDefinitionSetup from "metabase/containers/FormSetup";
+
+const DETAILS_FORM_FIELDS: FormFieldDefinition[] = [
+// const DETAILS_FORM_FIELDS: FormFieldDefinitionSetup = [
+  {
+    name: "last_name",
+    title: t`Last name`,
+    placeholder: "姓",
+    validate: validate.required().maxLength(100),
+  },
+  {
+    name: "first_name",
+    title: t`First name`,
+    placeholder: "名",
+    validate: validate.required().maxLength(100),
+  },
+  {
+    name: "email",
+    title: t`Email`,
+    placeholder: "设置邮箱",
+    validate: validate.required().email(),
+  },
+];
+
+const PASSWORD_FORM_FIELDS: FormFieldDefinition[] = [
+// const PASSWORD_FORM_FIELDS: FormFieldDefinitionSetup = [
+  {
+    name: "password",
+    title: t`Create a password`,
+    type: "password",
+    placeholder: t`Shhh...`,
+    validate: validate.required().passwordComplexity(),
+  },
+  {
+    name: "password_confirm",
+    title: t`Confirm your password`,
+    type: "password",
+    placeholder: t`Shhh... but one more time so we get it right`,
+    validate: (password_confirm, { values: { password } = {} }) =>
+      (!password_confirm && t`required`) ||
+      (password_confirm !== password && t`passwords do not match`),
+  },
+];
+
+export default {
+  admin: {
+    fields: [
+      ...DETAILS_FORM_FIELDS,
+      {
+        name: "group_ids",
+        // title: "Groups",
+        title: "用户组",
+        type: FormGroupsWidget,
+      },
+      ...PLUGIN_ADMIN_USER_FORM_FIELDS,
+    ],
+  },
+  user: {
+    fields: [...DETAILS_FORM_FIELDS],
+  },
+  setup: {
+    fields: [
+      ...DETAILS_FORM_FIELDS,
+      ...PASSWORD_FORM_FIELDS,
+      {
+        name: "site_name",
+        title: t`Your company or team name`,
+        // placeholder: t`Department of Awesome`,
+        placeholder: "组织名称",
+        validate: validate.required(),
+      },
+    ],
+  },
+  password: {
+    fields: [
+      {
+        name: "old_password",
+        type: "password",
+        title: t`Current password`,
+        placeholder: t`当前密码`,
+        validate: validate.required(),
+      },
+      ...PASSWORD_FORM_FIELDS,
+    ],
+  },
+  password_reset: {
+    fields: [...PASSWORD_FORM_FIELDS],
+  },
+};
